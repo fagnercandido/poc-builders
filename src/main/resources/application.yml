@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Teste PlatformBuilders Clientes
+  datasource:
+    url: jdbc:mysql://mysql-service:3306/clientes?allowPublicKeyRetrieval=true&useSSL=false
+    username: clientes
+    password: 6e9a09261e310bbd2c31bcca70b2529e
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+swagger:
+  release:
+    version: 0.0.2
+  api:
+    version: 2021-06-20

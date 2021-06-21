@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Teste PlatformBuilders Clientes
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    platform: h2
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+swagger:
+  release:
+    version: 0.0.2
+  api:
+    version: 2021-06-20

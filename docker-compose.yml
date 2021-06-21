@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  mysql-service:
+    image: mysql
+    networks:
+      - clientes-network
+    restart: on-failure
+    environment:
+      - MYSQL_ROOT_PASSWORD=6e9a09261e310bbd2c31bcca70b2529e
+      - MYSQL_USER=clientes
+      - MYSQL_PASSWORD=6e9a09261e310bbd2c31bcca70b2529e
+      - MYSQL_DATABASE=clientes
+    ports:
+      - 3306:3306
+  web-service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    networks:
+      - clientes-network
+    depends_on:
+      - mysql-service
+networks:
+  clientes-network:
+    driver: bridge
